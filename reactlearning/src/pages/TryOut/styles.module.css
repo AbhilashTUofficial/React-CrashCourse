@@ -1,0 +1,42 @@
+.tryOutContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.editor {
+  flex: 1;
+  min-width: 300px;
+}
+
+.liveEditor {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 300px;
+  overflow: auto;
+}
+
+.preview {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f0f4f8;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.liveError {
+  color: red;
+  margin-top: 5px;
+}
+
+.backBtn {
+  display: inline-block;
+  margin-top: 2rem;
+  color: blue;
+  text-decoration: underline;
+}

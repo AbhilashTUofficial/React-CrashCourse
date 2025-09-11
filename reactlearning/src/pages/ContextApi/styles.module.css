@@ -1,0 +1,48 @@
+
+.expandableContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding-top: 0;
+  margin-top: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.expandableContent.open {
+  max-height: 500px; 
+  padding-top: 1rem;
+  background-color: lightgray;
+}
+
+.expandableDesc {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.try-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #22c55e; /* green */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.try-btn:hover {
+  background-color: #16a34a;
+}
+
+.try-btn-icon {
+  display: inline-block;
+  font-size: 1rem;
+}
+

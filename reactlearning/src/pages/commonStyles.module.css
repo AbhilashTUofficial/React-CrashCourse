@@ -1,0 +1,71 @@
+/* General layout */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  color: #0f172a;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #475569;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.vertical{
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: block;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cardTitle {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+
+}
+
+.points {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}

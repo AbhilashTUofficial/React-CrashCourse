@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import commonStyles from "../commonStyles.module.css";
+import styles from "./styles.module.css";
+import type { HomeProps } from "./types.ts";
+import { propsLessons } from "./lessons.ts";
+import { PageHeader } from "../../Components/PageHeader/PageHeader.tsx";
+import { ExpandableCard } from "../../Components/LessonBlock/index.tsx";
+
+
+export default function Props(_: HomeProps) {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+    const toggleExpand = (index: number) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
+    return (
+        <div className={commonStyles.container}>
+            <PageHeader title="Props" subtitle="Passing data from parent to child" />
+
+            <div className={commonStyles.vertical} aria-label="Lessons">
+                {propsLessons.map((lesson, index) => {
+                    const isOpen = expandedIndex === index;
+                    return (<ExpandableCard key={index} lesson={lesson} />
+                    );
+                })}
+            </div>
+
+            <Link to="/" className={commonStyles["back-btn"]}>
+                Back <span className={commonStyles["back-btn-icon"]}>←</span>
+            </Link>
+        </div>
+    );
+}
