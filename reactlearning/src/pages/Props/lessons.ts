@@ -7,11 +7,12 @@ export const propsLessons = [
       {
         type: "text",
         content:
-          "Props (short for properties) are the primary way to pass data from a parent component to a child component in React. They make components dynamic and reusable."
+          "Props (short for properties) are the primary way to pass data from a parent component to a child component in React. They make components dynamic and reusable.",
       },
       {
         type: "text",
-        content: "Key Points:\n- Props are read-only.\n- Can be any data type: string, number, object, array, function.\n- Enable reusable components."
+        content:
+          "Key Points:\n- Props are read-only.\n- Can be any data type: string, number, object, array, function.\n- Enable reusable components.",
       },
       {
         type: "code",
@@ -29,13 +30,13 @@ function App() {
     </>
   );
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "Output:\nHello, Alice!\nHello, Bob!"
-      }
-    ]
+        content: "Output:\nHello, Alice!\nHello, Bob!",
+      },
+    ],
   },
   {
     to: "/basic-example",
@@ -44,7 +45,7 @@ function App() {
     desc: [
       {
         type: "text",
-        content: "Here we pass a simple prop from parent to child."
+        content: "Here we pass a simple prop from parent to child.",
       },
       {
         type: "code",
@@ -62,13 +63,14 @@ function App() {
     </div>
   );
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "Explanation: The parent component App sends 'name' as a prop to Greeting, which renders it."
-      }
-    ]
+        content:
+          "Explanation: The parent component App sends 'name' as a prop to Greeting, which renders it.",
+      },
+    ],
   },
   {
     to: "/destructuring-props",
@@ -78,7 +80,7 @@ function App() {
       {
         type: "text",
         content:
-          "Instead of using props.name repeatedly, you can destructure the props directly in the function parameters."
+          "Instead of using props.name repeatedly, you can destructure the props directly in the function parameters.",
       },
       {
         type: "code",
@@ -91,13 +93,13 @@ function Greeting({ name }) {
 function App() {
   return <Greeting name="Alice" />;
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "Destructuring makes your code cleaner and easier to read."
-      }
-    ]
+        content: "Destructuring makes your code cleaner and easier to read.",
+      },
+    ],
   },
   {
     to: "/props-data-types",
@@ -106,7 +108,8 @@ function App() {
     desc: [
       {
         type: "text",
-        content: "Props can hold more than strings: numbers, arrays, objects, booleans, and functions."
+        content:
+          "Props can hold more than strings: numbers, arrays, objects, booleans, and functions.",
       },
       {
         type: "code",
@@ -132,13 +135,14 @@ function App() {
     />
   );
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "You can also pass functions as props to make children interactive."
-      }
-    ]
+        content:
+          "You can also pass functions as props to make children interactive.",
+      },
+    ],
   },
   {
     to: "/functions-as-props",
@@ -147,7 +151,8 @@ function App() {
     desc: [
       {
         type: "text",
-        content: "Functions defined in the parent can be passed to children as props."
+        content:
+          "Functions defined in the parent can be passed to children as props.",
       },
       {
         type: "code",
@@ -162,13 +167,14 @@ function App() {
   
   return <Button onClick={sayHello} label="Click Me!" />;
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "Clicking the button calls the parent's function, demonstrating child-to-parent communication."
-      }
-    ]
+        content:
+          "Clicking the button calls the parent's function, demonstrating child-to-parent communication.",
+      },
+    ],
   },
   {
     to: "/default-props",
@@ -177,7 +183,8 @@ function App() {
     desc: [
       {
         type: "text",
-        content: "You can provide default values to props in case the parent doesn't pass them."
+        content:
+          "You can provide default values to props in case the parent doesn't pass them.",
       },
       {
         type: "code",
@@ -190,13 +197,13 @@ function Greeting({ name = "Guest" }) {
 function App() {
   return <Greeting />; // Renders "Hello, Guest!"
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "Default props ensure components always have valid data."
-      }
-    ]
+        content: "Default props ensure components always have valid data.",
+      },
+    ],
   },
   {
     to: "/prop-types",
@@ -205,7 +212,8 @@ function App() {
     desc: [
       {
         type: "text",
-        content: "PropTypes help validate the type of props passed to components."
+        content:
+          "PropTypes help validate the type of props passed to components.",
       },
       {
         type: "code",
@@ -221,13 +229,14 @@ Greeting.propTypes = {
   name: PropTypes.string.isRequired,
   age: PropTypes.number
 };
-        `
+        `,
       },
       {
         type: "text",
-        content: "Using PropTypes prevents passing wrong data types and catches errors during development."
-      }
-    ]
+        content:
+          "Using PropTypes prevents passing wrong data types and catches errors during development.",
+      },
+    ],
   },
   {
     to: "/nested-props",
@@ -236,7 +245,8 @@ Greeting.propTypes = {
     desc: [
       {
         type: "text",
-        content: "Props can flow through multiple component layers to reach deeply nested components."
+        content:
+          "Props can flow through multiple component layers to reach deeply nested components.",
       },
       {
         type: "code",
@@ -253,12 +263,88 @@ function Parent({ message }) {
 function App() {
   return <Parent message="Hello from App!" />;
 }
-        `
+        `,
       },
       {
         type: "text",
-        content: "This allows data to reach deeply nested components without using global state."
-      }
-    ]
+        content:
+          "This allows data to reach deeply nested components without using global state.",
+      },
+    ],
+  },
+  {
+    to: "/function-props",
+    title: "Passing Functions as Props",
+    subtitle: "Passing functions/events as props",
+    desc: [
+      {
+        type: "text",
+        content:
+          "Functions and events can also be passed as props, allowing for interactive components.",
+      },
+      {
+        type: "code",
+        language: "jsx",
+        content: `
+        function Button({ onClick, label }) {
+  return <button onClick={onClick}>{label}</button>;
+}
+
+export default function App() {
+  const handleClick = () => alert("Button clicked!");
+
+  return <Button onClick={handleClick} label="Click Me" />;
+}
+`,
+      },
+      {
+        type: "text",
+        content:
+          "This allows data to reach deeply nested components without using global state.",
+      },
+    ],
+  },
+  {
+    to: "/validating-props",
+    title: "Validating Props",
+    subtitle: "Enforce prop types for safety with PropTypes",
+    desc: [
+      {
+        type: "text",
+        content:
+          "Using props-types we can validate the type of props passed to components, making it easier to catch errors during development.",
+      },
+      {
+        type: "code",
+        language: "jsx",
+        content: `
+        import PropTypes from "prop-types";
+
+function Card({ title, content }) {
+  return (
+    <div>
+      <h3>{title}</h3>
+      <p>{content}</p>
+    </div>
+  );
+}
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string
+};
+
+Card.defaultProps = {
+  content: "No content provided."
+};
+
+`,
+      },
+      {
+        type: "text",
+        content:
+          "This allows data to reach deeply nested components without using global state.",
+      },
+    ],
   },
 ];

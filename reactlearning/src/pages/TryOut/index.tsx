@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import commonStyles from "../commonStyles.module.css";
+import commonStyles from "../../styles/common.module.css";
 import styles from "./styles.module.css";
 
 export default function TryOut({ lessons }) {

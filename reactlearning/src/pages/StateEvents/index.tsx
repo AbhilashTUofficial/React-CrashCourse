@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import commonStyles from "../commonStyles.module.css";
+import commonStyles from "../../styles/common.module.css";
 import styles from "./styles.module.css";
 import type { HomeProps } from "./types.ts";
 import { stateLessons } from "./lessons.ts";

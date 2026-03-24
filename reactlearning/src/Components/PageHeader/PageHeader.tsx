@@ -1,5 +1,5 @@
 import React from "react";
-import commonStyles from "../../pages/commonStyles.module.css";
+import commonStyles from "../../styles/common.module.css";
 
 interface HeaderProps {
     title: string;

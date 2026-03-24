@@ -14,28 +14,42 @@ import ReactRouter from "./pages/ReactRouter";
 import { routerLessons } from "./pages/ReactRouter/lessons";
 import DataFetching from "./pages/DataFetching";
 import { dataFetchingLessons } from "./pages/DataFetching/lessons";
+import Events from "./pages/Events";
+import { eventLessons } from "./pages/Events/lessons";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ReactQuery from "./pages/ReactQuery";
+import Paggination from "./pages/Paggination";
+
 
 export default function App() {
+  const queryClient = new QueryClient();
+
   return (
     <div>
-      <main style={{ padding: "1rem" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/react-basics" element={<ReactBasics />} />
-          <Route path="/props" element={<Props />} />
-          <Route path="/props/:lessonId" element={<TryOut lessons={propsLessons} />} />
-          <Route path="/state-events" element={<StateEvents />} />
-          <Route path="/state-events/:lessonId" element={<TryOut lessons={stateLessons} />} />
-          <Route path="/hooks" element={<Hooks />} />
-          <Route path="/hooks/:lessonId" element={<TryOut lessons={hooksLessons} />} />
-          <Route path="/context-api" element={<ContextApi />} />
-          <Route path="/context-api/:lessonId" element={<TryOut lessons={contextLessons} />} />
-          <Route path="/react-router" element={<ReactRouter />} />
-          <Route path="/react-router/:lessonId" element={<TryOut lessons={routerLessons} />} />
-          <Route path="/data-fetching" element={<DataFetching />} />
-          <Route path="/data-fetching/:lessonId" element={<TryOut lessons={dataFetchingLessons} />} />
-        </Routes>
-      </main>
+      <QueryClientProvider client={queryClient}>
+        <main style={{ padding: "1rem" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/react-basics" element={<ReactBasics />} />
+            <Route path="/props" element={<Props />} />
+            <Route path="/props/:lessonId" element={<TryOut lessons={propsLessons} />} />
+            <Route path="/state" element={<StateEvents />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/events/:lessonId" element={<TryOut lessons={eventLessons} />} />
+            <Route path="/state-events/:lessonId" element={<TryOut lessons={stateLessons} />} />
+            <Route path="/hooks" element={<Hooks />} />
+            <Route path="/hooks/:lessonId" element={<TryOut lessons={hooksLessons} />} />
+            <Route path="/context-api" element={<ContextApi />} />
+            <Route path="/context-api/:lessonId" element={<TryOut lessons={contextLessons} />} />
+            <Route path="/react-router" element={<ReactRouter />} />
+            <Route path="/react-router/:lessonId" element={<TryOut lessons={routerLessons} />} />
+            <Route path="/data-fetching" element={<DataFetching />} />
+            <Route path="/data-fetching/:lessonId" element={<TryOut lessons={dataFetchingLessons} />} />
+            <Route path="/react-query" element={<ReactQuery />} />
+            <Route path="/paggination" element={<Paggination />} />
+          </Routes>
+        </main>
+      </QueryClientProvider>
     </div>
   );
 }

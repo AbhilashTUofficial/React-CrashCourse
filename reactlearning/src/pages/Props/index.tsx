@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import commonStyles from "../commonStyles.module.css";
-import styles from "./styles.module.css";
+import commonStyles from "../../styles/common.module.css";
 import type { HomeProps } from "./types.ts";
 import { propsLessons } from "./lessons.ts";
 import { PageHeader } from "../../Components/PageHeader/PageHeader.tsx";
