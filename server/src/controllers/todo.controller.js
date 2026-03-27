@@ -1,6 +1,15 @@
 const Todo = require("../models/Todo");
 
-const createTodo = async (req, res) => {
+const createNormalTodo = async (req, res) => {
+  try {
+    const todo = await Todo.create(req.body);
+    res.status(201).json(todo);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const createDailyTodo = async (req, res) => {
   try {
     const todo = await Todo.create(req.body);
     res.status(201).json(todo);
@@ -36,6 +45,24 @@ const getTodo = async (req, res) => {
   }
 };
 
+const getDailyTodo = async (req, res) => {
+  try {
+    const todo = await Todo.findById(req.params.id);
+    res.json(todo);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const getAllDailyTodo = async (req, res) => {
+  try {
+    const todo = await Todo.find();
+    res.json(todo);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 const updateTodo = async (req, res) => {
   try {
     const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
@@ -57,10 +84,13 @@ const deleteTodo = async (req, res) => {
 };
 
 module.exports = {
-  createTodo,
+  createNormalTodo,
+  createDailyTodo,
   createMultipleTodos,
   getTodos,
+  getDailyTodo,
   getTodo,
   updateTodo,
   deleteTodo,
+  getAllDailyTodo,
 };
